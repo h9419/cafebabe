@@ -2,14 +2,14 @@ name := "Cafebabe"
 
 version := "1.2"
 
-scalaVersion := "2.12.10"
+scalaVersion := "3.1.0"
 
-crossScalaVersions := Seq("2.11.12", "2.12.10")
+crossScalaVersions := Seq("3.1.0")
 
 scalacOptions ++= Seq(
     "-deprecation",
     "-unchecked"
 )
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+// libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
 
