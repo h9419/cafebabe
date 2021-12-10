@@ -160,14 +160,14 @@ class ConstantPool extends Streamable {
 
     for (c: Char <- s) {
       if (c >= 0x0001 && c <= 0x007f) {
-        bytes = bytes :+ (c: Byte)
+        bytes = bytes :+ (c: U1)
       } else if (c >= 0x0800) {
-        bytes = bytes :+ ((0xe0 | ((c >>> 12) & 0x0f)): Byte)
-        bytes = bytes :+ ((0x80 | ((c >>> 6) & 0x3f)): Byte)
-        bytes = bytes :+ ((0x80 | (c & 0x3f)): Byte)
+        bytes = bytes :+ ((0xe0 | ((c >>> 12) & 0x0f)): U1)
+        bytes = bytes :+ ((0x80 | ((c >>> 6) & 0x3f)): U1)
+        bytes = bytes :+ ((0x80 | (c & 0x3f)): U1)
       } else {
-        bytes = bytes :+ ((0xc0 | ((c >>> 6) & 0x1f)): Byte)
-        bytes = bytes :+ ((0x80 | (c & 0x3f)): Byte)
+        bytes = bytes :+ ((0xc0 | ((c >>> 6) & 0x1f)): U1)
+        bytes = bytes :+ ((0x80 | (c & 0x3f)): U1)
       }
     }
     bytes
